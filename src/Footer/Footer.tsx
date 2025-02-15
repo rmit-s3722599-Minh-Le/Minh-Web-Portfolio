@@ -39,6 +39,15 @@ function Footer() {
             <li>
                 <a
                 className="App-link"
+                href="/contact"
+                rel="noopener noreferrer"
+                >
+                Contact
+                </a>
+            </li>
+            <li>
+                <a
+                className="App-link"
                 href="https://github.com/rmit-s3722599-Minh-Le"
                 target="_blank"
                 rel="noopener noreferrer"

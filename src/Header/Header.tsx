@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { isUserOnline } from '../UserStorage/User';
 
 function Header() {
   return (
@@ -25,10 +26,10 @@ function Header() {
             <li>
                 <a
                 className="App-link"
-                href="/contact"
+                href={isUserOnline() ? "/user" : "/login"}
                 rel="noopener noreferrer"
                 >
-                Contact
+                { isUserOnline() ?"User" : "Login"}
                 </a>
             </li>
         </ul>
