@@ -1,7 +1,10 @@
 import React from 'react';
 import './Header.css';
-import { isUserOnline } from '../UserStorage/User';
-
+import { isUserOnline, logout } from '../UserStorage/User';
+import {
+    Button,
+  } from "@mui/material";
+import LogoutIcon from '@mui/icons-material/Logout';
 function Header() {
   return (
     <div className="header">
@@ -32,6 +35,24 @@ function Header() {
                 { isUserOnline() ?"User" : "Login"}
                 </a>
             </li>
+            {
+                isUserOnline() &&
+                <Button
+                    // fullWidth
+                    variant="contained"
+                    startIcon={<LogoutIcon />}
+                    // sx={{ mt: 3, mb: 2 }}
+                    
+                    onClick={() => {
+                        //logout
+                        logout()
+                      }}
+                    color="error"
+                    // type="submit"
+                >
+                    Logout
+              </Button>
+            }
         </ul>
     </div>
   );

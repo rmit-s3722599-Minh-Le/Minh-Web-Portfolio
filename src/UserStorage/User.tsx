@@ -13,3 +13,8 @@ export function removeUser() {
 export function isUserOnline() {
     return getUser() && true
 }
+
+export function logout() {
+    removeUser()
+    window.location.href = "/login"
+}

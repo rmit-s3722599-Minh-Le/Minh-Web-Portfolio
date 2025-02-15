@@ -2,6 +2,8 @@ import React from 'react';
 import './Footer.css';
 import logo from '../Assets/github-mark-white.png'
 import logo2 from '../Assets/github-mark.png'
+import { IconButton } from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 function Footer() {
 
@@ -46,6 +48,9 @@ function Footer() {
                 </a>
             </li>
             <li>
+                <IconButton color="secondary"  href="https://www.linkedin.com/in/minh-le-708249169/" aria-label="linkedin-btn">
+                    <LinkedInIcon />
+                </IconButton>
                 <a
                 className="App-link"
                 href="https://github.com/rmit-s3722599-Minh-Le"
