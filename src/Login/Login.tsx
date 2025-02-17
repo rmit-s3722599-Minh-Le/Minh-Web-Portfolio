@@ -11,6 +11,7 @@ import {
     Button,
     Grid,
   } from "@mui/material";
+import { setUser } from '../UserStorage/User';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -30,7 +31,9 @@ function Login() {
         setPasswordError(true)
         return false
       }
-
+      console.log(window.location.href)
+      setUser("Test User")
+      window.location.href = "/"
       return true
       // checks for passw
     };
