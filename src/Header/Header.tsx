@@ -38,17 +38,14 @@ function Header() {
             {
                 isUserOnline() &&
                 <Button
-                    // fullWidth
                     variant="contained"
                     startIcon={<LogoutIcon />}
-                    // sx={{ mt: 3, mb: 2 }}
                     
                     onClick={() => {
                         //logout
                         logout()
                       }}
                     color="error"
-                    // type="submit"
                 >
                     Logout
               </Button>
