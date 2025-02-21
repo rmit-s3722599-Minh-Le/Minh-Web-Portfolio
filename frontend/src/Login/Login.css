@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.Login {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .TxtComp {
+			padding-left: 300px;
+			padding-right: 300px;
+    }
+}

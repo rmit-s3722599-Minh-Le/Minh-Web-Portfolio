@@ -1,0 +1,23 @@
+.Homepage {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.Experience {
+    div {
+        padding: 16px;
+        padding-top: 8px;
+        ul {
+            list-style-position: inside;
+            text-align: left;
+            padding-left: 270px;
+            padding-right: 270px;
+            li {
+                padding-top: 16px;
+            }
+        } 
+    }
+
+    
+
+}
