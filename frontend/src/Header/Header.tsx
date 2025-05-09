@@ -5,9 +5,16 @@ import {
     Button,
   } from "@mui/material";
 import LogoutIcon from '@mui/icons-material/Logout';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import MobileHeader from '../MobileHeader/MobileHeader';
+
 function Header() {
-  return (
-    <div className="header">
+  const theme = useTheme();
+  //const [isMobile, setMobile] = useState(useMediaQuery(theme.breakpoints.up('sm')));
+  let isMobile = useMediaQuery(theme.breakpoints.up('md'))
+  function desktopHeader() {
+    return (
         <ul>
             <li>
                 <a
@@ -51,6 +58,11 @@ function Header() {
               </Button>
             }
         </ul>
+    )
+  }
+  return (
+    <div className="header">
+        {isMobile ? desktopHeader() : <MobileHeader />}
     </div>
   );
 }

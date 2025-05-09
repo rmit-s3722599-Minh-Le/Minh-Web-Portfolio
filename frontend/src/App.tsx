@@ -7,12 +7,11 @@ import Home from './Home/Home';
 import Contact from './Contact/Contact';
 import Experience from './Experience/Experience';
 import Login from './Login/Login';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 function App() {
-  const [count, setCount] = useState();
-
   function renderPage() {
-    console.log(window.location.pathname);
     switch(window.location.pathname) {
       case "/":
         return <Home />;
@@ -23,7 +22,6 @@ function App() {
       default:
         return <Login />;
     }
-    return
   }
 
   return (
