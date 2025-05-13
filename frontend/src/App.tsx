@@ -7,39 +7,42 @@ import Home from './Home/Home';
 import Contact from './Contact/Contact';
 import Experience from './Experience/Experience';
 import Login from './Login/Login';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import { BrowserRouter, Routes,
+  Route, 
+  Navigate} from "react-router-dom";
+
 
 function App() {
+
   function renderPage() {
-    switch(window.location.pathname) {
-      case "/":
-        return <Home />;
-      case "/contact":
-        return <Contact />;
-      case "/experience":
-        return <Experience />;
-      default:
-        return <Login />;
-    }
-  }
+    return (
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/experience" element={<Experience/>}/>
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
+    )}
 
   return (
-  <div className="Root">
-    {/* This is the header */}
-    <div className="headerApp">
-      <Header />
-    </div>
+    <BrowserRouter>
+      <div className="Root">
+        {/* This is the header */}
+        <div className="headerApp">
+          <Header />
+        </div>
 
-    <div className="App">
-      {renderPage()}
-    </div>
+        <div className="App">
+          {renderPage()}
+        </div>
 
-    {/* This is the footer */}
-    <div className="footerApp">
-      <Footer />
-    </div>
-  </div>
+        {/* This is the footer */}
+        <div className="footerApp">
+          <Footer />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
