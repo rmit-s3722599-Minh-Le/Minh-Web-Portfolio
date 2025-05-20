@@ -10,6 +10,7 @@ import AssessmentIcon from '@mui/icons-material/Assessment';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from "react-router-dom";
+import { ROUTE } from '../Constant';
 
 function MobileHeader() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -22,7 +23,7 @@ function MobileHeader() {
       <List>
         {['Homepage', 'My Experience  '].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => index % 2 === 0 ?  navigate('/') : navigate('/experience')}>
+            <ListItemButton onClick={() => index % 2 === 0 ?  navigate(ROUTE.HOME) : navigate(ROUTE.EXPERIENCE)}>
               <ListItemIcon>
                 {index % 2 === 0 ? <HomeIcon /> : <AssessmentIcon />}
               </ListItemIcon>
@@ -35,7 +36,7 @@ function MobileHeader() {
       <List>
         {['User', isUserOnline() ? 'Logout' : 'Login'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => { index % 2 === 0 ? logout() : console.log('jajaji') }}>
+            <ListItemButton onClick={() => { index % 2 === 0 ? logout() : navigate(ROUTE.LOGIN) }}>
               <ListItemIcon>
                 {index % 2 === 0 ? <AccountCircleIcon /> :(isUserOnline() ? <LogoutIcon /> : <LoginIcon />)}
               </ListItemIcon>

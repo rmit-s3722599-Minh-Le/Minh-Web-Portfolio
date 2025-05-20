@@ -10,6 +10,7 @@ import Login from './Login/Login';
 import { BrowserRouter, Routes,
   Route, 
   Navigate} from "react-router-dom";
+import { ROUTE } from './Constant';
 
 
 function App() {
@@ -17,11 +18,11 @@ function App() {
   function renderPage() {
     return (
     <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="/experience" element={<Experience/>}/>
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path={ROUTE.HOME} element={<Home/>}/>
+      <Route path={ROUTE.LOGIN} element={<Login/>}/>
+      <Route path={ROUTE.CONTACT} element={<Contact/>}/>
+      <Route path={ROUTE.EXPERIENCE} element={<Experience/>}/>
+      <Route path="*" element={<Navigate to={ROUTE.HOME} />} />
     </Routes>
     )}
 

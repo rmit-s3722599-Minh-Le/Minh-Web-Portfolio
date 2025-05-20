@@ -4,6 +4,7 @@ import logo from '../Assets/github-mark-white.png'
 import logo2 from '../Assets/github-mark.png'
 import { IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { ROUTE } from '../Constant';
 
 function Footer() {
 
@@ -41,7 +42,7 @@ function Footer() {
             <li>
                 <a
                 className="App-link"
-                href="/contact"
+                href={ROUTE.CONTACT}
                 rel="noopener noreferrer"
                 >
                 Contact

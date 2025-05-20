@@ -16,5 +16,5 @@ export function isUserOnline() {
 
 export function logout() {
     removeUser()
-    window.location.href = "/login"
+    window.location.href = {ROUTE.LOGIN}
 }

@@ -8,17 +8,17 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import MobileHeader from '../MobileHeader/MobileHeader';
+import { ROUTE } from '../Constant';
 
 function Header() {
   const theme = useTheme();
-  //const [isMobile, setMobile] = useState(useMediaQuery(theme.breakpoints.up('sm')));
   let isMobile = useMediaQuery(theme.breakpoints.up('md'))
   function desktopHeader() {
     return (
         <ul>
             <li>
                 <a
-                href="/"
+                href={ROUTE.HOME}
                 >
                 Homepage
                 </a>
@@ -26,7 +26,7 @@ function Header() {
             <li>
                 <a
                 className="App-link"
-                href="/experience"
+                href={ROUTE.EXPERIENCE}
                 // target="_blank"
                 rel="noopener noreferrer"
                 >
@@ -36,7 +36,7 @@ function Header() {
             <li>
                 <a
                 className="App-link"
-                href={isUserOnline() ? "/user" : "/login"}
+                href={isUserOnline() ? "/user" : ROUTE.LOGIN}
                 rel="noopener noreferrer"
                 >
                 { isUserOnline() ?"User" : "Login"}
