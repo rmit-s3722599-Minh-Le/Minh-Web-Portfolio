@@ -3,5 +3,6 @@ export const ROUTE = {
     LOGOUT: '/logout',
     CONTACT: '/contact',
     EXPERIENCE: '/experience',
+    USER: '/user',
     HOME: '/',
 }

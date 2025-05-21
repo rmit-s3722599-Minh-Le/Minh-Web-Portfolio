@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Header from './Header/Header';
@@ -11,6 +11,7 @@ import { BrowserRouter, Routes,
   Route, 
   Navigate} from "react-router-dom";
 import { ROUTE } from './Constant';
+import User from './User/User';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path={ROUTE.LOGIN} element={<Login/>}/>
       <Route path={ROUTE.CONTACT} element={<Contact/>}/>
       <Route path={ROUTE.EXPERIENCE} element={<Experience/>}/>
+      <Route path={ROUTE.USER} element={<User />}/>
       <Route path="*" element={<Navigate to={ROUTE.HOME} />} />
     </Routes>
     )}

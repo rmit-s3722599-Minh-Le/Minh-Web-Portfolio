@@ -2,16 +2,10 @@ import './Login.css';
 import { useState } from "react";
 import {
     Container,
-    FormControl,
-    CssBaseline,
-    Box,
-    Avatar,
-    Typography,
     TextField,
     Button,
-    Grid,
   } from "@mui/material";
-import { setUser } from '../UserStorage/User';
+import { setUser } from '../UserStorage/UserStorage';
 import { ROUTE } from '../Constant';
 import { useNavigate } from 'react-router-dom';
 

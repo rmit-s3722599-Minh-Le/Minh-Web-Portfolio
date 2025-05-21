@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isUserOnline, logout } from '../UserStorage/User';
+import { isUserOnline, logout } from '../UserStorage/UserStorage';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import { grey } from '@mui/material/colors';
@@ -15,6 +15,8 @@ import { ROUTE } from '../Constant';
 function MobileHeader() {
   const [openMenu, setOpenMenu] = useState(false)
   let navigate = useNavigate();
+  let a = isUserOnline() ? ['User', 'Logout'] : ['Login']
+// index % 2 === 0 ? navigate(ROUTE.USER) : (isUserOnline() ? logout() :  navigate(ROUTE.LOGIN))
 
 
   function sideMenu() {
@@ -34,9 +36,9 @@ function MobileHeader() {
       </List>
       <Divider />
       <List>
-        {['User', isUserOnline() ? 'Logout' : 'Login'].map((text, index) => (
+        {a.map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton onClick={() => { index % 2 === 0 ? logout() : navigate(ROUTE.LOGIN) }}>
+            <ListItemButton onClick={() => { isUserOnline() ? (index % 2 === 0 ? navigate(ROUTE.USER) : logout()) : navigate(ROUTE.LOGIN) }}>
               <ListItemIcon>
                 {index % 2 === 0 ? <AccountCircleIcon /> :(isUserOnline() ? <LogoutIcon /> : <LoginIcon />)}
               </ListItemIcon>

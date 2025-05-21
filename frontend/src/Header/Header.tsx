@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { isUserOnline, logout } from '../UserStorage/User';
+import { isUserOnline, logout } from '../UserStorage/UserStorage';
 import {
     Button,
   } from "@mui/material";
@@ -36,7 +36,7 @@ function Header() {
             <li>
                 <a
                 className="App-link"
-                href={isUserOnline() ? "/user" : ROUTE.LOGIN}
+                href={isUserOnline() ? ROUTE.USER : ROUTE.LOGIN}
                 rel="noopener noreferrer"
                 >
                 { isUserOnline() ?"User" : "Login"}
