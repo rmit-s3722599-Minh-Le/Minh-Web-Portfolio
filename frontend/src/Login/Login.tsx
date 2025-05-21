@@ -2,23 +2,19 @@ import './Login.css';
 import { useState } from "react";
 import {
     Container,
-    FormControl,
-    CssBaseline,
-    Box,
-    Avatar,
-    Typography,
     TextField,
     Button,
-    Grid,
   } from "@mui/material";
-import { setUser } from '../UserStorage/User';
+import { setUser } from '../UserStorage/UserStorage';
+import { ROUTE } from '../Constant';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
-
+    let navigate = useNavigate();
 
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
@@ -33,7 +29,7 @@ function Login() {
       }
       console.log(window.location.href)
       setUser("Test User")
-      window.location.href = "/"
+      navigate(ROUTE.HOME)
       return true
       // checks for passw
     };
