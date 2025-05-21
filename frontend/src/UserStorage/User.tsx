@@ -1,3 +1,5 @@
+import { ROUTE } from "../Constant";
+
 export function setUser(Username: string) {
     localStorage.setItem("username", Username)
 }
@@ -16,5 +18,5 @@ export function isUserOnline() {
 
 export function logout() {
     removeUser()
-    window.location.href = {ROUTE.LOGIN}
+    window.location.href = ROUTE.LOGIN
 }
