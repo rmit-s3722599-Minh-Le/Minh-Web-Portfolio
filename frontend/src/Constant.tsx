@@ -4,5 +4,6 @@ export const ROUTE = {
     CONTACT: '/contact',
     EXPERIENCE: '/experience',
     USER: '/user',
+    EXPERIMENT: '/experiment',
     HOME: '/',
 }

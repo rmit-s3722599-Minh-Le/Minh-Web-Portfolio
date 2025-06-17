@@ -12,6 +12,7 @@ import { BrowserRouter, Routes,
   Navigate} from "react-router-dom";
 import { ROUTE } from './Constant';
 import User from './User/User';
+import ReactExperiments from './ReactExperiments/ReactExperiments';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path={ROUTE.CONTACT} element={<Contact/>}/>
       <Route path={ROUTE.EXPERIENCE} element={<Experience/>}/>
       <Route path={ROUTE.USER} element={<User />}/>
+      <Route path = {ROUTE.EXPERIMENT} element={<ReactExperiments />}/>
       <Route path="*" element={<Navigate to={ROUTE.HOME} />} />
     </Routes>
     )}
